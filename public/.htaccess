@@ -1,0 +1,23 @@
+<ifModule mod_rewrite.c>
+    # "NC" - case insensitive
+    # "L" - dont process any more rules
+    # "QSA" - append query string from request to substituted URL
+
+    RewriteEngine on
+
+
+    # CONFIG_1
+    # Don't process physical file/directory by the front controller.
+    # If the file/directory with the specified name in the url doesn't exist, procede to the
+    # rewrite rule - redirect all the request to index.php
+    #RewriteCond %{REQUEST_FILENAME} !-f
+    #RewriteCond %{REQUEST_FILENAME} !-d
+    #RewriteCond %{REQUEST_FILENAME} !-l
+    #RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+
+
+    # CONFIG_2
+    Options +FollowSymLinks
+    # Store values from URL to array -  $_GET = array("controller"=>"home", "action"=>"index", "id"=>"14")
+    RewriteRule ^([a-zA-Z]*)/?([a-zA-Z]*)?/?([a-zA-Z0-9]*)?/?$ index.php?controller=$1&action=$2&id=$3 [NC,L]
+</ifModule>

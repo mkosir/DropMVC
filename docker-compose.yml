@@ -1,0 +1,57 @@
+version: '3'
+
+services:
+
+  app_webserver:
+    build: ./.docker
+    image: marko424/apache-php:7.2.2
+    container_name: dropline-php-webserver
+    working_dir: /srv/app
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/srv/app
+    links:
+      #- db-mysql
+      - db-mariadb
+    # Replaces the defaults values in .env file
+    environment:
+      DB_HOST: db-mariadb
+      #DB_HOST: 127.18.0.2
+      DB_PORT: 3306
+      DB_DATABASE: dropline
+      DB_USERNAME: root
+      DB_PASSWORD: rootpass
+
+#  db-mysql:
+#    image: mysql:5.7
+#    container_name: dropline-db-mysql
+#    ports:
+#      - "13306:3306"
+#    environment:
+#      MYSQL_DATABASE: dropline
+#      MYSQL_USER: root
+#      MYSQL_PASSWORD: rootpass
+#      MYSQL_ROOT_PASSWORD: rootpass
+
+  db-mariadb:
+    image: mariadb:10.2.13
+    container_name: dropline-db-mariadb
+    ports:
+      - "23306:3306"
+    environment:
+      MYSQL_DATABASE: dropline
+      MYSQL_USER: root
+      MYSQL_PASSWORD: rootpass
+      MYSQL_ROOT_PASSWORD: rootpass
+
+
+
+# Update and run docker-compose.yml
+#docker-compose up -d
+
+# Grab the IP of all running containers
+#docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
+
+# Log in to container
+#$ winpty docker exec -it 57bfe605ab3f bash

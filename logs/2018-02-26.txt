@@ -1,0 +1,39 @@
+[26-Feb-2018 09:02:56 UTC] 
+
+Error occurred
+Uncaught exception: 'Error'
+Message: 'Class 'DropLine\Models\Home' not found'
+Stack trace: #0 /srv/app/core/Controller.php(46): DroplineMVC\Controllers\Home->index()
+#1 [internal function]: DroplineMVC\Core\Controller->executeAction()
+#2 /srv/app/core/Controller.php(37): call_user_func_array(Array, Array)
+#3 /srv/app/public/index.php(50): DroplineMVC\Core\Controller->__call('execute', Array)
+#4 {main}
+Thrown in '/srv/app/app/controllers/Home.php' on line 11
+
+[26-Feb-2018 09:03:23 UTC] 
+
+Error occurred
+Uncaught exception: 'Error'
+Message: 'Class 'DropLine\Models\Home' not found'
+Stack trace: #0 /srv/app/core/Controller.php(46): DroplineMVC\Controllers\Home->index()
+#1 [internal function]: DroplineMVC\Core\Controller->executeAction()
+#2 /srv/app/core/Controller.php(37): call_user_func_array(Array, Array)
+#3 /srv/app/public/index.php(50): DroplineMVC\Core\Controller->__call('execute', Array)
+#4 {main}
+Thrown in '/srv/app/app/controllers/Home.php' on line 11
+
+[26-Feb-2018 09:04:40 UTC] 
+
+Error occurred
+Uncaught exception: 'Error'
+Message: 'Class 'DropLine\Utils\Encode' not found'
+Stack trace: #0 /srv/app/app/views/_main/main.php(8): require()
+#1 /srv/app/core/View.php(27): require('/srv/app/app/vi...')
+#2 /srv/app/app/controllers/drops.php(19): DroplineMVC\Core\View::render('drops', 'index', Array, true)
+#3 /srv/app/core/Controller.php(46): DroplineMVC\Controllers\Drops->index()
+#4 [internal function]: DroplineMVC\Core\Controller->executeAction()
+#5 /srv/app/core/Controller.php(37): call_user_func_array(Array, Array)
+#6 /srv/app/public/index.php(50): DroplineMVC\Core\Controller->__call('execute', Array)
+#7 {main}
+Thrown in '/srv/app/app/views/drops/index.php' on line 11
+

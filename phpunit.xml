@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit colors="true"> <!--color test results-->
+    <filter>
+        <whitelist>
+            <directory suffix=".php">./</directory>
+            <exclude>
+                <directory>./config</directory>
+                <directory>./locale</directory>
+                <directory>./logs</directory>
+                <directory>./node_modules</directory>
+                <directory>./public</directory>
+                <directory>./test</directory>
+                <directory>./test_logs</directory>
+                <directory>./vendor</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+
+    <!--<logging>-->
+        <!--<log type="coverage-html" target="./test_coverage/html/"/>-->
+        <!--<log type="coverage-clover" target="./test_coverage/coverage.xml"/>-->
+    <!--</logging>-->
+
+    <testsuites>
+        <testsuite name="Application Test Suite">
+            <directory>./test/</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>

@@ -1,0 +1,5 @@
+Database:
+---------
+- MariaDB 10.2.13
+- Character set: utf8
+- Collation: utf8_unicode_ci

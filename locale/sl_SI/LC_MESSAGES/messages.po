@@ -1,0 +1,35 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.4\n"
+"Last-Translator: \n"
+"Language: sl\n"
+
+#: app/views/_main/main.php:12
+#, php-format
+msgid "Welcome, %s!"
+msgstr "Pozdravljen, %s!"
+
+#: app/views/_main/main.php:15
+#, php-format
+msgid "Only one unread message"
+msgid_plural "%d unread messages"
+msgstr[0] "%d neprebrano sporočilo"
+msgstr[1] "%d neprebrani sporočili"
+msgstr[2] "%d neprebrana sporočila"
+msgstr[3] "%d neprebranih sporočil"
+
+#: app/views/_main/main.php:23
+msgid "Introduction"
+msgstr "Predstavitev"
+
+#: app/views/_main/main.php:24
+msgid "We're now translating some strings"
+msgstr "Prevedimo nekaj stavkov"

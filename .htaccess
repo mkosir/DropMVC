@@ -1,0 +1,11 @@
+# check if mod_rewrite is active in Apache
+<ifModule mod_rewrite.c>
+    # "L" - dont process any more rules
+
+    RewriteEngine on
+
+    # Redirect all of the request from "root" to "public" folder.
+    # Configuration of the root of web server should be done in Apache web server file httpd.conf - DocumentRoot ("public" - web accessible folder)
+    RewriteRule ^$ public/ [L]
+    RewriteRule (.*) public/$1 [L]
+</ifModule>
