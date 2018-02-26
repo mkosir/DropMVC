@@ -38,7 +38,6 @@ class Router
 
         // Necessary addition for namespaces - e.g. 'DroplineMVC\Controllers\Home'
         $this->controller = NS_MAIN . "\\" . NS_CONTROLLERS . "\\" . $this->controller;
-        print_r($this->controller);
     }
 
     // Kind of factory method (not pattern)
