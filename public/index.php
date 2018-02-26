@@ -13,15 +13,15 @@ require_once '../vendor/autoload.php';
 # Environment variables
 $dotenv = new Dotenv\Dotenv('../');
 $dotenv->load();
-
-// Create session
-session_start();
-
-// Include config
-require_once('../config/Config.php');
-// Gettext - set user language
-//require_once('../config/Config_i18n.php');
-echo "HELLO333!";
+echo "HELLO33344!";
+//// Create session
+//session_start();
+//
+//// Include config
+//require_once('../config/Config.php');
+//// Gettext - set user language
+////require_once('../config/Config_i18n.php');
+//
 //// Error and exception handling
 //error_reporting(E_ALL); // Display all types of errors. Or change php.ini to effect all scripts.
 //set_error_handler(NS_MAIN . "\\" . NS_UTILS . "\ErrorHandler::errorHandler");
