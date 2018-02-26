@@ -13,7 +13,7 @@ require_once '../vendor/autoload.php';
 # Environment variables
 $dotenv = new Dotenv\Dotenv('../');
 $dotenv->load();
-echo "HELLO333444435sss3455554d4!";
+
 // Create session
 session_start();
 
