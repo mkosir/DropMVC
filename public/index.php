@@ -1,15 +1,15 @@
 <?php
-echo "HELLO!";
-//use DroplineMVC\Core\Router;
-//
-///////////// Benchmarking autoloading
-//// Composer’s autoloader
-//require_once '../vendor/autoload.php';
-//
-//// My Custom Autoloader
-////require_once('../utils/CustomAutoloader.php');
-/////////////
-//
+
+use DroplineMVC\Core\Router;
+
+/////////// Benchmarking autoloading
+// Composer’s autoloader
+require_once '../vendor/autoload.php';
+
+// My Custom Autoloader
+//require_once('../utils/CustomAutoloader.php');
+///////////
+echo "HELLO2222!";
 //# Environment variables
 //$dotenv = new Dotenv\Dotenv('../');
 //$dotenv->load();
