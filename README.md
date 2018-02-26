@@ -1,6 +1,6 @@
 ## DroplineMVC
 Test development project:
-- creating my own MVC framework with PHP 7.2
+- creating MVC framework with PHP 7.2
 - benchmarking my custom autoloader/composer's autoloader
 - localization with gettext
 - word/tag cloud generator
