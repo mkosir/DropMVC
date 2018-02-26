@@ -2,4 +2,4 @@
 /vendor
 /.idea
 /.vagrant
-.env
+#.env
