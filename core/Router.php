@@ -24,7 +24,9 @@ class Router
         if ($route['controller'] == "") {
             $this->controller = 'Home';
         } else {
-            $this->controller = $route['controller'];
+            // Class names in php are not case-sensitive, but code can effectively
+            // inherits the case-sensitivity of the file-system.
+            $this->controller = ucfirst($route['controller']);
         }
         // If there is no action, create "index" action
         if ($route['action'] == "") {
@@ -36,7 +38,6 @@ class Router
 
         // Necessary addition for namespaces - e.g. 'DroplineMVC\Controllers\Home'
         $this->controller = NS_MAIN . "\\" . NS_CONTROLLERS . "\\" . $this->controller;
-        $this->controller = 'DroplineMVC\Controllers\Drops';
         print_r($this->controller);
     }
 
