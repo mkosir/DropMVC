@@ -9,19 +9,19 @@ require_once '../vendor/autoload.php';
 // My Custom Autoloader
 //require_once('../utils/CustomAutoloader.php');
 ///////////
-echo "HELLO2222!";
-//# Environment variables
-//$dotenv = new Dotenv\Dotenv('../');
-//$dotenv->load();
-//
-//// Create session
-//session_start();
-//
-//// Include config
-//require_once('../config/Config.php');
-//// Gettext - set user language
-////require_once('../config/Config_i18n.php');
-//
+
+# Environment variables
+$dotenv = new Dotenv\Dotenv('../');
+$dotenv->load();
+
+// Create session
+session_start();
+
+// Include config
+require_once('../config/Config.php');
+// Gettext - set user language
+//require_once('../config/Config_i18n.php');
+echo "HELLO333!";
 //// Error and exception handling
 //error_reporting(E_ALL); // Display all types of errors. Or change php.ini to effect all scripts.
 //set_error_handler(NS_MAIN . "\\" . NS_UTILS . "\ErrorHandler::errorHandler");
