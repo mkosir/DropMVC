@@ -5,7 +5,8 @@
         <br />
     </div>
 
-    <script src="http://d3js.org/d3.v3.min.js"></script>
+<!--    <script src="http://d3js.org/d3.v3.min.js"></script>-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
     <script src="js/d3.layout.cloud.js"></script>
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
     <script>
