@@ -6,7 +6,8 @@ Test development project:
 - word/tag cloud generator
 - Bootstrap 4
 - unit testing with PHPUnit7 framework
-- provisioning LAMP server with Vagrant and Docker (deployed to Heroku)
+- provisioning LAMP server with Vagrant and Docker
+- deploying to Heroku - https://droplinemvc.herokuapp.com
 
 #### Test Environment 
 * Vagrant - [Vagrant box](https://app.vagrantup.com/marko424/boxes/ubuntu-lamp-xdebug) / [GitHub](https://github.com/markokosir/vagrant-ubuntu-lamp-xdebug) 
