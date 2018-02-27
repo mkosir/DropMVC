@@ -1,7 +1,9 @@
+# noinspection SqlNoDataSourceInspectionForFile
+
 /*
  Navicat Premium Data Transfer
 
- Source Server         : Vagrant-Homestead-MariaDB
+ Source Server         : Vagrant-MariaDB
  Source Server Type    : MariaDB
  Source Server Version : 100213
  Source Host           : localhost:33060
@@ -74,7 +76,7 @@ INSERT INTO `users` VALUES (25, 'dummy_row_name', 'dummy_row_email', 'dummy_row_
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `Activity_UsersDrops`;
 delimiter ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Activity_UsersDrops`(
+CREATE PROCEDURE `Activity_UsersDrops`(
 	OUT `out_Drops_TotalNumOfDrops` INT(11),
 	OUT `out_Users_TotalNumOfUsers` INT(11),
 	OUT `out_Drops_PostedPerDayAvg` FLOAT,
@@ -166,7 +168,7 @@ delimiter ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `Drops_AddDrop`;
 delimiter ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Drops_AddDrop`(IN `in_title` VARCHAR(255), IN `in_body` TEXT, IN `in_link` VARCHAR(255), IN `in_user_id` INT(11))
+CREATE PROCEDURE `Drops_AddDrop`(IN `in_title` VARCHAR(255), IN `in_body` TEXT, IN `in_link` VARCHAR(255), IN `in_user_id` INT(11))
 BEGIN
 INSERT INTO drops (title, body, link, user_id) VALUES(in_title, in_body, in_link, in_user_id);
 SELECT LAST_INSERT_ID();
@@ -179,7 +181,7 @@ delimiter ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `Drops_DeleteDropById`;
 delimiter ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Drops_DeleteDropById`(IN `in_drops_id` INT(11))
+CREATE PROCEDURE `Drops_DeleteDropById`(IN `in_drops_id` INT(11))
 BEGIN
 DELETE FROM drops
 	WHERE drops.id = in_drops_id
@@ -193,7 +195,7 @@ delimiter ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `Drops_EditDropById`;
 delimiter ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Drops_EditDropById`(
+CREATE PROCEDURE `Drops_EditDropById`(
 	IN `in_drop_id` INT(11),
 	IN `in_title` VARCHAR(255),
 	IN `in_body` TEXT,
@@ -218,7 +220,7 @@ delimiter ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `Drops_GetAll`;
 delimiter ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Drops_GetAll`()
+CREATE PROCEDURE `Drops_GetAll`()
 BEGIN
    SELECT * FROM drops
    ORDER BY drops.id DESC;
@@ -231,7 +233,7 @@ delimiter ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `Drops_GetAllWithUsername`;
 delimiter ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Drops_GetAllWithUsername`()
+CREATE PROCEDURE `Drops_GetAllWithUsername`()
 BEGIN
 SELECT drops.id, users.name as user_name, users.id as user_id, drops.title, drops.body, drops.link, drops.create_date 
                   FROM drops INNER JOIN users
@@ -246,7 +248,7 @@ delimiter ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `Drops_GetAvgDropsPostedPerDay`;
 delimiter ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Drops_GetAvgDropsPostedPerDay`()
+CREATE PROCEDURE `Drops_GetAvgDropsPostedPerDay`()
 BEGIN
 
 SELECT (count(drops.id) / DATEDIFF(MAX(drops.create_date), MIN(drops.create_date))) AS Drops_GetAvgDropsPostedPerDay
@@ -263,7 +265,7 @@ delimiter ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `Drops_GetDropAvgLength`;
 delimiter ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Drops_GetDropAvgLength`()
+CREATE PROCEDURE `Drops_GetDropAvgLength`()
 BEGIN
 SELECT AVG(CHAR_LENGTH(drops.body)) AS Drops_GetDropAvgLength
 	FROM drops;
@@ -276,7 +278,7 @@ delimiter ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `Drops_GetDropByIdWithUsername`;
 delimiter ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Drops_GetDropByIdWithUsername`(
+CREATE PROCEDURE `Drops_GetDropByIdWithUsername`(
 	IN `in_drops_id` INT(11)
 )
 BEGIN
@@ -296,7 +298,7 @@ delimiter ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `Drops_GetLatestDrop`;
 delimiter ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Drops_GetLatestDrop`()
+CREATE PROCEDURE `Drops_GetLatestDrop`()
 BEGIN
 
 # Get the latest drop in database
@@ -319,7 +321,7 @@ delimiter ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `Drops_GetLatestDropForAllUsers`;
 delimiter ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Drops_GetLatestDropForAllUsers`()
+CREATE PROCEDURE `Drops_GetLatestDropForAllUsers`()
 BEGIN
 
 # Get latest drop for each user
@@ -343,7 +345,7 @@ delimiter ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `Drops_GetTotalNumOfDrops`;
 delimiter ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Drops_GetTotalNumOfDrops`()
+CREATE PROCEDURE `Drops_GetTotalNumOfDrops`()
 BEGIN
 SELECT count(drops.id) AS Drops_GetTotalNumOfDrops
 	FROM drops;
@@ -356,7 +358,7 @@ delimiter ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `Drops_GetWordsDropsTitles`;
 delimiter ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Drops_GetWordsDropsTitles`(
+CREATE PROCEDURE `Drops_GetWordsDropsTitles`(
 	IN `in_numOfLastTitlesLimit` INT(11)
 
 )
@@ -377,7 +379,7 @@ delimiter ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `Users_AddUser`;
 delimiter ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Users_AddUser`(
+CREATE PROCEDURE `Users_AddUser`(
 	IN `in_name` VARCHAR(255),
 	IN `in_email` VARCHAR(255),
 	IN `in_password` VARCHAR(255)
@@ -395,7 +397,7 @@ delimiter ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `Users_GetNumOfDropsForEachUser`;
 delimiter ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Users_GetNumOfDropsForEachUser`()
+CREATE PROCEDURE `Users_GetNumOfDropsForEachUser`()
 BEGIN
 
 # Get number of drops for each user
@@ -415,7 +417,7 @@ delimiter ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `Users_GetTotalNumOfUsers`;
 delimiter ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Users_GetTotalNumOfUsers`()
+CREATE PROCEDURE `Users_GetTotalNumOfUsers`()
 BEGIN
 SELECT count(users.id) AS Users_GetTotalNumOfUsers
 	FROM users;
@@ -428,7 +430,7 @@ delimiter ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `Users_GetUserByEmail`;
 delimiter ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Users_GetUserByEmail`(
+CREATE PROCEDURE `Users_GetUserByEmail`(
 	IN `in_email` VARCHAR(255)
 )
 BEGIN
@@ -443,7 +445,7 @@ delimiter ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `Users_GetUserByName`;
 delimiter ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Users_GetUserByName`(
+CREATE PROCEDURE `Users_GetUserByName`(
 	IN `in_name` VARCHAR(255)
 )
 BEGIN
@@ -458,7 +460,7 @@ delimiter ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `User_GetUserWithMostNumOfDrops`;
 delimiter ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `User_GetUserWithMostNumOfDrops`()
+CREATE PROCEDURE `User_GetUserWithMostNumOfDrops`()
 BEGIN
 
 # Get user with the most drops posted
