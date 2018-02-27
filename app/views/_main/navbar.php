@@ -1,4 +1,4 @@
-<?php use DropLine\Utils\Encode; ?>
+<?php use DroplineMVC\Utils\Encode; ?>
 
 <div class="container-fluid px-0">
     <nav class="navbar navbar-expand-md navbar-light" style="background-color:#f8f8f8; padding-left: 50px; padding-right: 50px">

@@ -12,7 +12,7 @@ class Wordcloud extends Controller
 
 //    protected function index()
 //    {
-//        $model = new \DropLine\Models\Drop();
+//        $model = new \DroplineMVC\Models\Drop();
 //        list($status, $data) = $model->getDropsFreqWords(2);
 //
 //        // Data handling success

@@ -4,7 +4,7 @@ namespace DroplineMVC\Utils;
 
 /**
  * Class Messages
- * @package DropLine\Utils
+ * @package DroplineMVC\Utils
  *
  * Helper function for storing a message into session variable.
  * Preconditions: session must already be created, Bootstrap 4 library must be loaded for message formatting.

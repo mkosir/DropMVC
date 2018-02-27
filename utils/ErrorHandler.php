@@ -8,7 +8,7 @@ namespace DroplineMVC\Utils;
  * Error and exception handler.
  * Display errors on the screen or save it into a file.
  *
- * @package DropLine\Utils
+ * @package DroplineMVC\Utils
  */
 class ErrorHandler
 {
