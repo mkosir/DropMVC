@@ -6,7 +6,7 @@ use DroplineMVC\Utils\HTTP;
 use DroplineMVC\Core\View;
 use DroplineMVC\Utils\Messages;
 
-class WordCloud extends Controller
+class Wordcloud extends Controller
 {
     private $wordsData = array();
 
