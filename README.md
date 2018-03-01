@@ -1,5 +1,5 @@
 ## DropMVC
-Creating my own MVC framework with PHP 7.2 with try out of:
+Creating my own MVC framework with PHP 7.2 and try out of:
 - Benchmarking my custom autoloader/composer's autoloader
 - Localization with gettext
 - Bootstrap 4
