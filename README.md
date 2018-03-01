@@ -7,7 +7,7 @@ Test development project:
 - Bootstrap 4
 - unit testing with PHPUnit7 framework
 - provisioning LAMP server with Vagrant and Docker
-- example MVC app deployed to Heroku - https://droplinemvc.herokuapp.com
+- example website created with DropMVC framework and deployed to Heroku - https://droplinemvc.herokuapp.com
 
 #### Test Environment 
 * Vagrant - [Vagrant box](https://app.vagrantup.com/marko424/boxes/ubuntu-lamp-xdebug) / [GitHub](https://github.com/markokosir/vagrant-ubuntu-lamp-xdebug) 
