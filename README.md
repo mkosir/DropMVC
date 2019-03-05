@@ -1,12 +1,12 @@
 ## DropMVC
-Creating my own MVC framework with PHP 7.2 and try out of:
+Creating lightweight MVC framework with PHP 7.2 and try out of:
 - Benchmarking my custom autoloader/composer's autoloader
 - Localization with gettext
 - Bootstrap 4
-- Unit testing with PHPUnit7 framework
+- Word/tag cloud generator with D3.js
 - Provisioning LAMP server with Vagrant and Docker
-- Word/tag cloud generator
-- Example website created with DropMVC framework and deployed to Heroku - https://droplinemvc.herokuapp.com
+- Unit testing with PHPUnit7 framework
+- [Example website on heroku](https://droplinemvc.herokuapp.com)
 
 #### Test Environment 
 * Vagrant - [Vagrant box](https://app.vagrantup.com/marko424/boxes/ubuntu-lamp-xdebug) / [GitHub](https://github.com/markokosir/vagrant-ubuntu-lamp-xdebug) 
